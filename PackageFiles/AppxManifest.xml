@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10">
   <Identity Name="Notepadpp" ProcessorArchitecture="x64" Publisher="CN=bridge10demo.com" Version="7.3.3.0" />
   <Properties>
-    <DisplayName>Notepadpp</DisplayName>
+    <DisplayName>Notepad++</DisplayName>
     <PublisherDisplayName>CN=bridge10demo.com</PublisherDisplayName>
     <Logo>Assets\SampleAppx.50x50.png</Logo>
   </Properties>
@@ -17,8 +17,15 @@
   </Capabilities>
   <Applications>
     <Application Id="Notepadpp" Executable="notepad++.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="Notepadpp" Description="Notepadpp" BackgroundColor="#777777" Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png" />
+      <uap:VisualElements DisplayName="Notepad++" Description="Notepadpp" BackgroundColor="transparent" Square150x150Logo="Assets\SampleAppx.150x150.png" Square44x44Logo="Assets\SampleAppx.44x44.png" />
       <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="imagetypes">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.txt</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
         <uap3:Extension Category="windows.appExecutionAlias" Executable="notepad++.exe" EntryPoint="Windows.FullTrustApplication">
           <uap3:AppExecutionAlias>
             <desktop:ExecutionAlias Alias="notepad++.exe" />
